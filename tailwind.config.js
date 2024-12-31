@@ -13,7 +13,7 @@ export default {
               "black": "#060606",
             },
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                "hanken-grotesk": ["Hanken Grotesk", "sans-serif"],
             },
         },
     },
