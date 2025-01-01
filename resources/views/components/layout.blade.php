@@ -11,7 +11,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-black text-white">
+<body class="bg-black text-white font-hanken-grotesk">
     <div class="px-10">
         <nav class="flex justify-between items-center py-4 border-b border-white/10">
             <div>
@@ -33,6 +33,10 @@
         <main class="mt-10 max-w-[986px] mx-auto">
             {{ $slot }}
         </main>
+
+        <footer class="text-center border-t border-white/10 mt-10 p-10">
+            &copy; 2024 Laracast
+        </footer>
     </div>
 </body>
 
