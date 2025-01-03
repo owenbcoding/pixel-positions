@@ -22,7 +22,12 @@
         <env name="APP_MAINTENANCE_DRIVER" value="file"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_STORE" value="array"/>
-        <env name="DB_DATABASE" value="testing"/>
+        <env name="DB_CONNECTION" value="mysql"/> <!-- Corrected the typo here -->
+        <env name="DB_HOST" value="127.0.0.1"/> <!-- Add your MySQL host -->
+        <env name="DB_PORT" value="3306"/> <!-- Add your MySQL port -->
+        <env name="DB_DATABASE" value="your_test_database"/> <!-- Add your test database name -->
+        <env name="DB_USERNAME" value="your_username"/> <!-- Add your MySQL username -->
+        <env name="DB_PASSWORD" value="your_password"/> <!-- Add your MySQL password -->
         <env name="MAIL_MAILER" value="array"/>
         <env name="PULSE_ENABLED" value="false"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
