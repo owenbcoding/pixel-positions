@@ -26,7 +26,6 @@
                 @foreach ($tags as $tag)
                     <x-tag :$tag />
                 @endforeach
-                {{-- <x-tag>Tag</x-tag> --}}
             </div>
 
         </section>
@@ -37,9 +36,6 @@
                 @foreach ($jobs as $job)
                     <x-job-card-wide :$job />
                 @endforeach
-                {{-- <x-job-card-wide />
-                <x-job-card-wide />
-                <x-job-card-wide /> --}}
             </div>
         </section>
     </div>
