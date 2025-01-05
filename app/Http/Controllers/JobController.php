@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
 use App\Models\Job;
 use App\Models\Tag;
-
 class JobController extends Controller
 {
     /**
@@ -14,12 +11,13 @@ class JobController extends Controller
      */
     public function index()
     {
-        return view('jobs.index', [ 
-            'jobs' => Job::alL(),
+        $jobs = Job::all()->groupBy('featured');
+        return view('jobs.index', [
+            'featuredJobs' => $jobs[0],
+            'jobs' => $jobs[1],
             'tags' => Tag::all(),
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -27,7 +25,6 @@ class JobController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -35,7 +32,6 @@ class JobController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      */
@@ -43,7 +39,6 @@ class JobController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -51,7 +46,6 @@ class JobController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      */
@@ -59,7 +53,6 @@ class JobController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      */
