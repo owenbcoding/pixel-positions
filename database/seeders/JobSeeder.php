@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Job;
+use App\Models\Tag;
 
 class JobSeeder extends Seeder
 {
@@ -12,6 +14,10 @@ class JobSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $tags = Tag::factory(3)->create();
+
+        Job::factory(20)->hasAttached($tags)->create();
+    
     }
+
 }
