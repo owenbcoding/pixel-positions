@@ -1,5 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JobController;
 
-Route::get('/', [App\Http\Controllers\JobController::class, 'index']);
+Route::get('/', [JobController::class, 'index']);
