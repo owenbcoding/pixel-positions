@@ -8,7 +8,7 @@
                     class="w-full mt-6 px-5 py-4 border bg-white/5 border-white/10 rounded-xl max-w-xl">
             </form>
         </section>
-
+        
         <x-section-heading>Featured Jobs</x-section-heading>
 
         <section>
