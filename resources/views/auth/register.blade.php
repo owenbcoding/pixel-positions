@@ -2,6 +2,7 @@
     <x-page-heading class="text-3xl font-bold mb-6">Register</x-page-heading>
 
     <x-forms.form method="POST" action="/register" enctype="multipart/form-data">
+        @csrf
         <x-forms.input name="name" type="text" label="Name" required autofocus />
         <x-forms.input name="email" type="email" label="Email" required />
         <x-forms.input name="password" type="password" label="Password" required />
