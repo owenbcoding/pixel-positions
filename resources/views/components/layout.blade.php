@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,9 +26,18 @@
                 <a href="#">Salaries</a>
                 <a href="#">Companies</a>
             </div>
-            <div>
-                <a href="#">post a job</a>
-            </div>
+            @auth
+                <div>
+                    <a href="/jobs/create">post a job</a>
+                </div>
+            @endauth
+
+            @guest
+                <div class="space-x-6">
+                    <a href="/register">Sign Up</a>
+                    <a href="/login">Log in</a>
+                </div>
+            @endguest
         </nav>
 
         <main class="mt-10 max-w-[986px] mx-auto">
