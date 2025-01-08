@@ -3,13 +3,14 @@
         <section class="text-center pt-6">
             <h1 class="fond-bold text-4xl">Lets Find Your Next Job</h1>
 
-            {{-- <form action="">
+            {{-- <form action="/search" method="post">
                 <input type="text" id="search" placeholder="Search for job"
                     class="w-full mt-6 px-5 py-4 border bg-white/5 border-white/10 rounded-xl max-w-xl">
             </form> --}}
 
             <x-forms.form action="/search" class="mt-6">
-                <x-forms.input :label="false" name="q" placeholder="Web Developer..." />
+                @csrf
+                <x-forms.input :label="false" name="q" placeholder="Search for job..." />
             </x-forms.form>
         </section>
         
