@@ -7,7 +7,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SearchController;
 
 Route::get('/', [JobController::class, 'index']);
-Route::post('/search', [SearchController::class]);
+Route::get('/search', SearchController::class);
 
 Route::middleware('guest')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create']);
