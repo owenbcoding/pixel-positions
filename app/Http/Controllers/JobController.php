@@ -1,7 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-use App\Http\Requests\StoreJobRequest;
-use App\Http\Requests\UpdateJobRequest;
 use App\Models\Job;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -16,10 +14,10 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::all()->groupBy('featured');
+        $jobs = Job::latest()->get()->groupBy('featured');
         return view('jobs.index', [
-            'featuredJobs' => $jobs[0],
             'jobs' => $jobs[1],
+            'featuredJobs' => $jobs[0],
             'tags' => Tag::all(),
         ]);
     }
@@ -49,9 +47,9 @@ class JobController extends Controller
         $job = Auth::user()->employer->jobs()->create(Arr::except($attributes, 'tags'));
 
         if ($attributes['tags'] ?? false) {
-            foreach (explode(',', $attributes['tags']) as $tag) { // frontend
-                $job->tags($tag);
-            };
+            foreach (explode(',', $attributes['tags']) as $tag) {
+                $job->tag($tag);
+            }
         }
         return redirect('/');
     }
