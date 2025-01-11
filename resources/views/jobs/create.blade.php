@@ -8,7 +8,7 @@
             <option>Part Time</option>
             <option>Full Time</option>
         </x-forms.select>
-        <x-forms.input label="URL" name="url" placeholder="https://laracasts.com/work" />
+        <x-forms.input label="URL" name="url" placeholder="https://example.com" />
         <x-forms.checkbox label="Feature (Costs Extra)" name="featured" />
         <x-forms.divider />
         <x-forms.input label="Tags (comma separated)" name="tags" placeholder="laracasts, video, education" />
